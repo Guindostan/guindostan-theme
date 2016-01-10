@@ -17,5 +17,8 @@
       font-weight: normal;
       font-style: normal;
     }
+}
 
+@mixin font-family($font-name: 'RobotoSlab', $font-type: 'Regular') {
+    font-family: #{$font-name}-#{$font-type};
 }

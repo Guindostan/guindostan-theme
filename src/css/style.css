@@ -249,18 +249,18 @@ main {
 }
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
   main {
-    margin-left: 35%;
-    max-width: 54em;
-    padding: 8em 4em 4em;
-    width: calc(100% - 35%);
+    margin-left: 35vw;
+    max-width: calc(100vw - 40vw);
+    padding: 8em 4rem 4rem;
+    width: calc(100vw - 35vw);
   }
 }
 @media only screen and (min-width: 1024px) {
   main {
-    margin-left: 35%;
-    max-width: 54em;
-    padding: 8em 4em 4em;
-    width: calc(100% - 35%);
+    margin-left: 35vw;
+    max-width: calc(100vw - 40vw);
+    padding: 8em 4rem 4rem;
+    width: calc(100vw - 35vw);
   }
 }
 
@@ -335,6 +335,25 @@ main {
  * ---
  * Menus
  */
+.menu {
+  font-family: RobotoSlab-Light;
+}
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+.menu a {
+  padding: .5rem;
+  text-transform: uppercase;
+  color: #999;
+}
+.menu a:hover {
+  color: #1F1815;
+  transition: color .2s;
+  text-decoration: none;
+}
+
 /**
  * partials/sidebar
  * ---

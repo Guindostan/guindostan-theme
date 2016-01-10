@@ -5,10 +5,21 @@
  */
 
 
-.nav {}
-
-.menu {}
-
-.sub-menu {}
-
-.menu-item {}
+.menu {
+    @include font-family('RobotoSlab', 'Light');
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+    }
+    a {
+        padding: .5rem;
+        text-transform: uppercase;
+        color: $gray-light;
+        &:hover {
+            color: $grayer;
+            transition: color .2s;
+            text-decoration: none;
+        }
+    }
+}
