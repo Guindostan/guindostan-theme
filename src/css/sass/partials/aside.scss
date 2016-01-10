@@ -1,0 +1,57 @@
+.main-aside {
+    color: rgba($white, .7);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    @include respond-to(tablet) {
+        text-align: right;
+    }
+    @include respond-to(desktop) {
+        text-align: right;
+    }
+    .logo {
+        a {
+            margin: 0px 0px 1rem;
+            width: 60%;
+            display: inline-block;
+        }
+        img {
+            width: 100%;
+        }
+    }
+    h1 {
+        font-weight: 200;
+        font-size: 1.1rem;
+        @include respond-to(mobile) {
+            font-size: .9rem;
+        }
+    }
+    footer {
+        display: none;
+        ul {
+            list-style: outside none none;
+        }
+        li {
+            display: inline-block;
+            padding: 0px 1rem 0px 0px;
+        }
+        a {
+            color: rgba($white, .5);
+        }
+        @include respond-to(desktop) {
+            display: block;
+            align-self: flex-end;
+            padding: 0px 1rem 6rem 0px;
+            text-align: right;
+            font-size: .6rem;
+        }
+        @include respond-to(tablet) {
+            display: block;
+            align-self: flex-end;
+            padding: 0px 1rem 6rem 0px;
+            text-align: right;
+            font-size: .6rem;
+        }
+    }
+}

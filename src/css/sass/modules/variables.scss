@@ -1,0 +1,45 @@
+/**
+ * modules/variables
+ * ---
+ */
+
+
+/**
+ * Typography
+ */
+
+$font-family-base: "Lato-Regular", Arial, "Open Sans", sans-serif;
+$font-size-base: 1rem;
+$line-height-base: 1.5;
+
+
+/**
+ * Colors
+ */
+
+$text-color: #111;
+$body-bg: #fff;
+$selection-bg: #CC0000;
+
+
+$black: #111;
+$grayer: #1F1815;
+$gray-light: #999;
+$white: #FFF;
+$primary: #AB0505;
+$primary-light: lighten($primary, 10%);
+$primary-dark: darken($primary, 10%);
+
+/**
+ * Grid
+ */
+
+$wrapper-width: 100%;
+
+
+$padding-horizontal-base: 5px;
+$padding-vertical-base: 5px;
+$margin-horizontal-base: 5px;
+$margin-vertical-base: 5px;
+$margin-horizontal-large: 15px;
+$margin-vertical-large: 15px;

@@ -1,0 +1,17 @@
+/**
+ * partials/wrapper
+ * ---
+ */
+
+
+.wrapper {
+    max-width: $wrapper-width;
+    display: flex;
+    flex-direction: row;
+    @include respond-to(tablet) {
+        flex-direction: column;
+    }
+    @include respond-to(mobile) {
+        flex-direction: column;
+    }
+}
