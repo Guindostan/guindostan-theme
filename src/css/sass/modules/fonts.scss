@@ -4,7 +4,13 @@
  * Declare fonts here
  */
 
-@each $font in Lato-Light, Lato-Bold, Lato-Regular {
+@each $font in RobotoSlab-Light,
+               RobotoSlab-Bold,
+               RobotoSlab-Regular,
+               RobotoSlab-Thin,
+               Lato-Light,
+               Lato-Bold,
+               Lato-Regular, {
     @font-face {
       font-family: $font;
       src: url("fonts/#{$font}.ttf") format("truetype");

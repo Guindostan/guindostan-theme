@@ -38,6 +38,30 @@
  * Declare fonts here
  */
 @font-face {
+  font-family: RobotoSlab-Light;
+  src: url("fonts/RobotoSlab-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: RobotoSlab-Bold;
+  src: url("fonts/RobotoSlab-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: RobotoSlab-Regular;
+  src: url("fonts/RobotoSlab-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: RobotoSlab-Thin;
+  src: url("fonts/RobotoSlab-Thin.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: Lato-Light;
   src: url("fonts/Lato-Light.ttf") format("truetype");
   font-weight: normal;
@@ -74,7 +98,7 @@ html {
 }
 
 body {
-  font-family: "Lato-Regular", Arial, "Open Sans", sans-serif;
+  font-family: "RobotoSlab-Regular", Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   color: #111;
