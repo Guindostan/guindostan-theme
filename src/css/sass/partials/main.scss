@@ -1,0 +1,18 @@
+.site-main {
+    h1 {
+        @include font-family('RobotoSlab', 'Light');
+        color: $gray-light;
+        margin: 0;
+    }
+    h2 {
+        & > a {
+            font-size: 1.5rem;
+            @include font-family('RobotoSlab', 'Thin');
+            color: $whitish;
+        }
+    }
+    .activities-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+}

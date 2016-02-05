@@ -23,12 +23,13 @@ $selection-bg: #CC0000;
 
 
 $black: #111;
+$white: #FFF;
 $grayer: #1F1815;
 $gray-light: #999;
-$white: #FFF;
-$primary: #AB0505;
+$whitish: darken($white, 20%);
+$primary: #800909;
 $primary-light: lighten($primary, 10%);
-$primary-dark: darken($primary, 10%);
+$primary-dark: #4D1A1A;
 
 /**
  * Grid

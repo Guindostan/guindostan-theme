@@ -1,27 +1,39 @@
 .main-aside {
-    background: $grayer;
-    background-image: url('img/guindostan-bg.jpg');
-    background-attachment: scroll;
-    background-position: center center;
-    background-size: cover;
+    background: $primary-dark;
+    //background-image: url('img/guindostan-bg.jpg');
     padding: 2rem 0 2rem 0;
+    position: relative;
     @include respond-to(tablet) {
-        padding: 8rem 3rem 0px 0px;
-        width: 35%;
         flex-basis: 35%;
         flex-grow: 0;
         flex-shrink: 1;
-        position: fixed;
         height: 100%;
+        padding: 8rem 3rem 0px 0px;
+        position: fixed;
+        width: 35%;
     }
     @include respond-to(desktop) {
-        padding: 8rem 3rem 0px 0px;
-        width: 35%;
         flex-basis: 35%;
         flex-grow: 0;
         flex-shrink: 1;
-        position: fixed;
         height: 100%;
+        padding: 8rem 3rem 0px 0px;
+        position: fixed;
+        width: 35%;
+        &:before {
+            width: 100%;
+            height: 100%;
+            background-image: url('img/guindostan-bg.jpg');
+            background-attachment: scroll;
+            background-position: center center;
+            background-size: cover;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: .4;
+            z-index: 1;
+        }
     }
 }
 

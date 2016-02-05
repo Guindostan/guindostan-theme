@@ -1,5 +1,5 @@
 .main-aside {
-    color: rgba($white, .7);
+    color: $white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -22,10 +22,15 @@
     }
     h1 {
         font-weight: 200;
-        font-size: 1.1rem;
-        @include respond-to(mobile) {
-            font-size: .9rem;
+        font-size: .9rem;
+        @include respond-to(tablet) {
+            font-size: 1.1rem;
         }
+    }
+    header,
+    footer {
+        z-index: 9;
+        position: relative;
     }
     footer {
         display: none;

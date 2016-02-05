@@ -22,37 +22,55 @@ if (!isset($content_width))
     $content_width = 900;
 }
 
-if (function_exists('add_theme_support'))
-{
+if ( function_exists( 'add_theme_support' ) ) {
 
-    // Add Thumbnail Theme Support
-    add_theme_support('post-thumbnails');
-    add_image_size('large', 700, '', true); // Large Thumbnail
-    add_image_size('medium', 250, '', true); // Medium Thumbnail
-    add_image_size('small', 120, '', true); // Small Thumbnail
-    add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+    // Add default posts and comments RSS feed links to head.
+	add_theme_support( 'automatic-feed-links' );
 
-    // Add Support for Custom Backgrounds - Uncomment below if you're going to use
-    /*add_theme_support('custom-background', array(
-    'default-color' => 'FFF',
-    'default-image' => get_template_directory_uri() . '/img/bg.jpg'
-    ));*/
+    /*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
 
-    // Add Support for Custom Header - Uncomment below if you're going to use
-    /*add_theme_support('custom-header', array(
-    'default-image'          => get_template_directory_uri() . '/img/headers/default.jpg',
-    'header-text'            => false,
-    'default-text-color'     => '000',
-    'width'                  => 1000,
-    'height'                 => 198,
-    'random-default'         => false,
-    'wp-head-callback'       => $wphead_cb,
-    'admin-head-callback'    => $adminhead_cb,
-    'admin-preview-callback' => $adminpreview_cb
-    ));*/
+    /*
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 */
+	add_theme_support( 'post-thumbnails' );
 
-    // Enables post and comment RSS feed links to head
-    add_theme_support('automatic-feed-links');
+    /*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support( 'html5', array(
+		'search-form',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
+	) );
+
+    /*
+	 * Enable support for Post Formats.
+	 * See https://developer.wordpress.org/themes/functionality/post-formats/
+	 */
+	add_theme_support( 'post-formats', array(
+		'aside',
+		'image',
+		'video',
+		'quote',
+		'link',
+	) );
+
+	// Set up the WordPress core custom background feature.
+	add_theme_support( 'custom-background', apply_filters( 'guindostan_custom_background_args', array(
+		'default-color' => 'ffffff',
+		'default-image' => '',
+	) ) );
 
     // Localisation Support
     load_theme_textdomain('html5blank', get_template_directory() . '/languages');
@@ -383,7 +401,8 @@ add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditi
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
-add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
+add_action('init', 'create_post_type_activities'); // Add our HTML5 Blank Custom Post Type
+add_action('init', 'create_post_type_groups'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
@@ -429,34 +448,35 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
     Custom Post Types
 \*------------------------------------*/
 
-// Create 1 Custom Post type for a Demo, called HTML5-Blank
-function create_post_type_html5()
-{
-    register_taxonomy_for_object_type('category', 'html5-blank'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'html5-blank');
-    register_post_type('html5-blank', // Register Custom Post Type
+function create_post_type_activities() {
+    register_taxonomy_for_object_type('category', 'activities'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'activities');
+    register_post_type('activities', // Register Custom Post Type
         array(
         'labels' => array(
-            'name' => __('HTML5 Blank Custom Post', 'html5blank'), // Rename these to suit
-            'singular_name' => __('HTML5 Blank Custom Post', 'html5blank'),
-            'add_new' => __('Add New', 'html5blank'),
-            'add_new_item' => __('Add New HTML5 Blank Custom Post', 'html5blank'),
-            'edit' => __('Edit', 'html5blank'),
-            'edit_item' => __('Edit HTML5 Blank Custom Post', 'html5blank'),
-            'new_item' => __('New HTML5 Blank Custom Post', 'html5blank'),
-            'view' => __('View HTML5 Blank Custom Post', 'html5blank'),
-            'view_item' => __('View HTML5 Blank Custom Post', 'html5blank'),
-            'search_items' => __('Search HTML5 Blank Custom Post', 'html5blank'),
-            'not_found' => __('No HTML5 Blank Custom Posts found', 'html5blank'),
-            'not_found_in_trash' => __('No HTML5 Blank Custom Posts found in Trash', 'html5blank')
+            'name' => __('Activities', 'activities'), // Rename these to suit
+            'singular_name' => __('Activity', 'activities'),
+            'add_new' => __('Add Activity', 'activities'),
+            'add_new_item' => __('Add New Activity', 'activities'),
+            'edit' => __('Edit', 'activities'),
+            'edit_item' => __('Edit Activity', 'activities'),
+            'new_item' => __('New Activity', 'activities'),
+            'view' => __('View Activities', 'activities'),
+            'view_item' => __('View Activity', 'activities'),
+            'search_items' => __('Search Activities', 'activities'),
+            'not_found' => __('No Activities found', 'activities'),
+            'not_found_in_trash' => __('No Activities found in Trash', 'activities')
         ),
         'public' => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
         'has_archive' => true,
+        'menu_position' => 5,
+        'menu_icon'   => 'dashicons-calendar-alt',
         'supports' => array(
             'title',
             'editor',
             'excerpt',
+            'custom-fields',
             'thumbnail'
         ), // Go to Dashboard Custom HTML5 Blank post for supports
         'can_export' => true, // Allows export in Tools > Export
@@ -467,18 +487,42 @@ function create_post_type_html5()
     ));
 }
 
-/*------------------------------------*\
-    ShortCode Functions
-\*------------------------------------*/
 
-// Shortcode Demo with Nested Capability
-function html5_shortcode_demo($atts, $content = null)
-{
-    return '<div class="shortcode-demo">' . do_shortcode($content) . '</div>'; // do_shortcode allows for nested Shortcodes
-}
-
-// Shortcode Demo with simple <h2> tag
-function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 shortcode, allows for nesting within above element. Fully expandable.
-{
-    return '<h2>' . $content . '</h2>';
+function create_post_type_groups() {
+    register_taxonomy_for_object_type('category', 'groups'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'groups');
+    register_post_type('groups', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('Groups', 'groups'), // Rename these to suit
+            'singular_name' => __('Group', 'groups'),
+            'add_new' => __('Add Group', 'groups'),
+            'add_new_item' => __('Add New Group', 'groups'),
+            'edit' => __('Edit', 'groups'),
+            'edit_item' => __('Edit Group', 'groups'),
+            'new_item' => __('New Group', 'groups'),
+            'view' => __('View Groups', 'groups'),
+            'view_item' => __('View Group', 'groups'),
+            'search_items' => __('Search Groups', 'groups'),
+            'not_found' => __('No Groups found', 'groups'),
+            'not_found_in_trash' => __('No Groups found in Trash', 'groups')
+        ),
+        'public' => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => true,
+        'menu_position' => 5,
+        'menu_icon'   => 'dashicons-groups',
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'custom-fields',
+            'thumbnail'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+        'taxonomies' => array(
+            'post_tag',
+            'category'
+        ) // Add Category and Post Tags support
+    ));
 }

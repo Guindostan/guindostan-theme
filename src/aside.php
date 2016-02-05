@@ -12,7 +12,7 @@
 		<h1>
 			Trabajamos por una cultura popular,<br>
 			alternativa y autogestionada, irreverente y combativa <br>
-			con dinámicas generadas desde el propio barrio
+			con din&aacute;micas generadas desde el propio barrio
 		</h1>
 		<!-- /logo -->
 
