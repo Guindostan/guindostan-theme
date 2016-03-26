@@ -1,0 +1,66 @@
+$category-thickness: 4px;
+
+article {
+    &.activities {
+        position: relative;
+        &.category-charlas-conferencias {
+            .entry-title > a {
+                color: $talks;
+            }
+            .activity-data {
+                border-left: $category-thickness solid $talks;
+            }
+        }
+        &.category-cultura {
+            .entry-title > a {
+                color: $culture;
+            }
+            .activity-data {
+                border-left: $category-thickness solid $culture;
+            }
+        }
+        &.category-evento-guindostan {
+            .entry-title > a {
+                color: $events;
+            }
+            .activity-data {
+                border-left: $category-thickness solid $events;
+            }
+        }
+        &.category-medio-ambiente {
+            .entry-title > a {
+                color: $environment;
+            }
+            .activity-data {
+                border-left: $category-thickness solid $environment;
+            }
+        }
+        .entry-header {
+            padding-right: 3rem;
+        }
+        .entry-title-single {
+            @include font-family('RobotoSlab', 'Light');
+            font-size: $font-size-xxlarge;
+        }
+        .the-post-thumbnail {
+            display: block;
+            margin-bottom: 1rem;
+            img {
+                width: 100%;
+            }
+        }
+        .activity-data {
+            list-style-type: none;
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+        .price {
+            color: $primary-light;
+            float: right;
+        }
+        .hour {
+            margin-bottom: 1rem;
+            color: $gray-light;
+        }
+    }
+}

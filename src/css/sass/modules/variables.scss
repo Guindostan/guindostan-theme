@@ -12,6 +12,12 @@ $font-family-base: 'RobotoSlab-Regular', Arial, sans-serif;
 $font-size-base: 1rem;
 $line-height-base: 1.5;
 
+$font-size-large: $font-size-base * 1.25;
+$font-size-xlarge: $font-size-base * 1.5;
+$font-size-xxlarge: $font-size-base * 2.5;
+
+$line-height-small: 1.25;
+$line-height-xsmall: 1;
 
 /**
  * Colors
@@ -30,6 +36,11 @@ $whitish: darken($white, 20%);
 $primary: #800909;
 $primary-light: lighten($primary, 10%);
 $primary-dark: #4D1A1A;
+
+$talks: #336699;
+$culture: #421C52;
+$events: #800909;
+$environment: #CCCC00;
 
 /**
  * Grid

@@ -90,6 +90,7 @@ body {
   line-height: 1.5;
   color: #111;
   background-color: #fff;
+  margin: 0;
 }
 
 img {
@@ -251,7 +252,7 @@ input[type="search"] {
 }
 
 main {
-  padding: 2rem;
+  padding: 5vh 5vw;
 }
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
   main {
@@ -368,16 +369,108 @@ main {
 .site-main h1 {
   font-family: RobotoSlab-Light;
   color: #999;
-  margin: 0;
-}
-.site-main h2 > a {
-  font-size: 1.5rem;
-  font-family: RobotoSlab-Thin;
-  color: #cccccc;
+  margin: 0 0 2rem;
 }
 .site-main .activities-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .site-main .activities-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .site-main .activities-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+.site-main .activities {
+  margin-bottom: 2rem;
+}
+.site-main .activities h2 {
+  margin-top: 0;
+  margin-bottom: .25rem;
+  line-height: 1.25;
+}
+.site-main .activities h2 > a {
+  font-family: RobotoSlab-Thin;
+  font-size: 1.25rem;
+}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .site-main .activities:nth-child(odd) {
+    margin-right: 2rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .site-main .activities {
+    flex-basis: calc(50% - 2rem);
+  }
+  .site-main .activities:nth-child(odd) {
+    margin-right: 2rem;
+  }
+}
+
+article.activities {
+  position: relative;
+}
+article.activities.category-charlas-conferencias .entry-title > a {
+  color: #336699;
+}
+article.activities.category-charlas-conferencias .activity-data {
+  border-left: 4px solid #336699;
+}
+article.activities.category-cultura .entry-title > a {
+  color: #421C52;
+}
+article.activities.category-cultura .activity-data {
+  border-left: 4px solid #421C52;
+}
+article.activities.category-evento-guindostan .entry-title > a {
+  color: #800909;
+}
+article.activities.category-evento-guindostan .activity-data {
+  border-left: 4px solid #800909;
+}
+article.activities.category-medio-ambiente .entry-title > a {
+  color: #CCCC00;
+}
+article.activities.category-medio-ambiente .activity-data {
+  border-left: 4px solid #CCCC00;
+}
+article.activities .entry-header {
+  padding-right: 3rem;
+}
+article.activities .entry-title-single {
+  font-family: RobotoSlab-Light;
+  font-size: 2.5rem;
+}
+article.activities .the-post-thumbnail {
+  display: block;
+  margin-bottom: 1rem;
+}
+article.activities .the-post-thumbnail img {
+  width: 100%;
+}
+article.activities .activity-data {
+  list-style-type: none;
+  list-style-position: inside;
+  padding-left: 1rem;
+}
+article.activities .price {
+  color: #b00c0c;
+  float: right;
+}
+article.activities .hour {
+  margin-bottom: 1rem;
+  color: #999;
+}
+
+.page-header .page-title {
+  font-family: RobotoSlab-Light;
+  font-size: 2.5rem;
 }
 
 /**

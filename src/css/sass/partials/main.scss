@@ -2,17 +2,41 @@
     h1 {
         @include font-family('RobotoSlab', 'Light');
         color: $gray-light;
-        margin: 0;
-    }
-    h2 {
-        & > a {
-            font-size: 1.5rem;
-            @include font-family('RobotoSlab', 'Thin');
-            color: $whitish;
-        }
+        margin: 0 0 2rem;
     }
     .activities-wrapper {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        @include respond-to(tablet) {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        @include respond-to(desktop) {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+    .activities {
+        margin-bottom: 2rem;
+        h2 {
+            margin-top: 0;
+            margin-bottom: .25rem;
+            line-height: $line-height-small;
+            & > a {
+                @include font-family('RobotoSlab', 'Thin');
+                font-size: $font-size-large;
+            }
+        }
+        @include respond-to(tablet) {
+            &:nth-child(odd) {
+                margin-right: 2rem;
+            }
+        }
+        @include respond-to(desktop) {
+            flex-basis: calc(50% - 2rem);
+            &:nth-child(odd) {
+                margin-right: 2rem;
+            }
+        }
     }
 }

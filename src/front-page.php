@@ -2,16 +2,13 @@
 <?php get_template_part('aside'); ?>
 
 	<main id="main" class="site-main" role="main">
-		<h1>Actividades de <?php echo date( "F" ) ?></h1>
+		<?php get_template_part('menu'); ?>
+		<h1>Próximas actividades</h1>
 		<div class="activities-wrapper">
 			<?php if ( have_posts() ) : ?>
 				<?php
 				$args = array(
-					'post_type' => 'activities',
-					'meta_key'     => 'fecha',
-					'meta_value'   => date( "Ymd" ),
-					'meta_compare' => '>=',
-					'posts_per_page' => '3'
+					'post_type' => 'activities'
 				);
 				$loop = new WP_Query( $args );
 				while ( $loop->have_posts() ) : $loop->the_post();

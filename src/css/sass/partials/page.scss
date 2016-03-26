@@ -1,0 +1,6 @@
+.page-header {
+    .page-title {
+        @include font-family('RobotoSlab', 'Light');
+        font-size: $font-size-xxlarge;
+    }
+}

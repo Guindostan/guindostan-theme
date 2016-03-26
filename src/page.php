@@ -1,10 +1,14 @@
 <?php get_header(); ?>
+<?php get_template_part('aside'); ?>
 
-	<main role="main">
+	<main role="main page">
 		<!-- section -->
+		<?php get_template_part('menu'); ?>
 		<section>
 
-			<h1><?php the_title(); ?></h1>
+			<header class="page-header">
+				<?php the_title( sprintf( '<h1 class="page-title">', esc_url( get_permalink() ) ), '</h1>' ); ?>
+			</header><!-- .entry-header -->
 
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
@@ -39,7 +43,3 @@
 		</section>
 		<!-- /section -->
 	</main>
-
-<?php get_sidebar(); ?>
-
-<?php get_footer(); ?>

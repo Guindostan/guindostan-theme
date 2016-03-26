@@ -38,7 +38,7 @@
 }
 
 main {
-    padding: 2rem;
+    padding: 5vh 5vw;
     @include respond-to(tablet) {
         margin-left: 35vw;
         max-width: calc(100vw - 40vw);
