@@ -426,7 +426,7 @@ main {
 .menu a {
   padding: .5rem;
   text-transform: uppercase;
-  color: #999;
+  color: #666;
 }
 .menu a:hover {
   color: #1F1815;
@@ -502,6 +502,72 @@ main {
     margin-right: 2rem;
   }
 }
+.site-main .activity-today-container .activities {
+  border-bottom: 3px solid #ccc;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+@media only screen and (min-width: 1024px) {
+  .site-main .activity-today-container .activities {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .site-main .activity-today-container .activities {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+.site-main .activity-today-container .activities .activity-today-data {
+  margin-bottom: 1rem;
+}
+@media only screen and (min-width: 1024px) {
+  .site-main .activity-today-container .activities .activity-today-data {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    margin-right: 3rem;
+    margin-bottom: 0;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .site-main .activity-today-container .activities .activity-today-data {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    margin-right: 3rem;
+    margin-bottom: 0;
+  }
+}
+.site-main .activity-today-container .activities .activity-today-data ul {
+  margin-bottom: 1rem;
+}
+.site-main .activity-today-container .activities .activity-today-data .price {
+  float: none;
+}
+@media only screen and (min-width: 1024px) {
+  .site-main .activity-today-container .activities .activity-today-image {
+    -webkit-box-flex: 2;
+    -webkit-flex: 2;
+    -ms-flex: 2;
+    flex: 2;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .site-main .activity-today-container .activities .activity-today-image {
+    -webkit-box-flex: 2;
+    -webkit-flex: 2;
+    -ms-flex: 2;
+    flex: 2;
+  }
+}
 
 article.activities {
   position: relative;
@@ -540,9 +606,12 @@ article.activities .entry-title-single {
 article.activities .the-post-thumbnail {
   display: block;
   margin-bottom: 1rem;
+  overflow: hidden;
 }
 article.activities .the-post-thumbnail img {
   width: 100%;
+  -webkit-transition: all .3s ease-in;
+  transition: all .3s ease-in;
 }
 article.activities .activity-data {
   list-style-type: none;

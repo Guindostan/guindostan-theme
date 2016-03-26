@@ -45,8 +45,10 @@ article {
         .the-post-thumbnail {
             display: block;
             margin-bottom: 1rem;
+            overflow: hidden;
             img {
                 width: 100%;
+                transition: all .3s ease-in;
             }
         }
         .activity-data {

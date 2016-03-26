@@ -39,4 +39,42 @@
             }
         }
     }
+    .activity-today-container .activities {
+        border-bottom: 3px solid $whitish;
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+        @include respond-to(desktop) {
+            display: flex;
+        }
+        @include respond-to(tablet) {
+            display: flex;
+        }
+        .activity-today-data {
+            margin-bottom: 1rem;
+            @include respond-to(desktop) {
+                flex: 1;
+                margin-right: 3rem;
+                margin-bottom: 0;
+            }
+            @include respond-to(tablet) {
+                flex: 1;
+                margin-right: 3rem;
+                margin-bottom: 0;
+            }
+            ul {
+                margin-bottom: 1rem;
+            }
+            .price {
+                float: none;
+            }
+        }
+        .activity-today-image {
+            @include respond-to(desktop) {
+                flex: 2;
+            }
+            @include respond-to(tablet) {
+                flex: 2;
+            }
+        }
+    }
 }
