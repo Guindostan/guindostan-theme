@@ -1,0 +1,20 @@
+.groups-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.group-wrapper {
+    background: $gray-light;
+    flex-basis: 47%;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+    }
+    img {
+        width: 5rem;
+    }
+}
