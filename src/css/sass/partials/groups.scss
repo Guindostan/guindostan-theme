@@ -1,20 +1,76 @@
+$hr-height: 4px;
+
 .groups-wrapper {
     display: flex;
     flex-wrap: wrap;
 }
 
 .group-wrapper {
-    background: $gray-light;
-    flex-basis: 47%;
+    flex-basis: 30%;
     margin-bottom: 1rem;
     margin-right: 1rem;
+    &.tertulias-del-desayuno {
+        color: $literature-group;
+        hr {
+            background: $literature-group;
+        }
+    }
+    &.taller-de-bicicletas {
+        color: $bikes-group;
+        hr {
+            background: $bikes-group;
+        }
+    }
+    &.teatro {
+        color: $theatre-group;
+        hr {
+            background: $theatre-group;
+        }
+    }
+    &.da-capo {
+        color: $dacapo-group;
+        hr {
+            background: $dacapo-group;
+        }
+    }
+    &.grupo-de-consumo {
+        color: $consume-group;
+        hr {
+            background: $consume-group;
+        }
+    }
+    &:hover {
+        transition: all .2s linear;
+        color: $grayer;
+        hr {
+            margin: 0 2rem;
+        }
+    }
+    hr {
+        height: $hr-height;
+        margin: 0 4rem;
+        border: none;
+        transition: all .2s ease-in;
+    }
     a {
+        color: currentColor;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 2rem;
+        padding: 1rem;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    h2 {
+        margin: 1rem 0 0;
+        font-size: 1.1rem;
+        font-weight: normal;
+        text-align: center;
     }
     img {
+        height: 5rem;
         width: 5rem;
     }
 }

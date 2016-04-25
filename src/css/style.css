@@ -13,6 +13,9 @@
 /**
  * Colors
  */
+/**/
+/* Groups
+/**/
 /**
  * Grid
  */
@@ -416,6 +419,7 @@ main {
   border-bottom: 3px solid #ccc;
   padding-bottom: 2rem;
   margin-bottom: 2rem;
+  margin-right: 0;
 }
 @media only screen and (min-width: 1024px) {
   .site-main .activity-today-container .activities {
@@ -529,18 +533,72 @@ article.activities .hour {
 }
 
 .group-wrapper {
-  background: #999;
-  flex-basis: 47%;
+  flex-basis: 30%;
   margin-bottom: 1rem;
   margin-right: 1rem;
 }
+.group-wrapper.tertulias-del-desayuno {
+  color: #43168a;
+}
+.group-wrapper.tertulias-del-desayuno hr {
+  background: #43168a;
+}
+.group-wrapper.taller-de-bicicletas {
+  color: #f1aa30;
+}
+.group-wrapper.taller-de-bicicletas hr {
+  background: #f1aa30;
+}
+.group-wrapper.teatro {
+  color: #a81818;
+}
+.group-wrapper.teatro hr {
+  background: #a81818;
+}
+.group-wrapper.da-capo {
+  color: #008fcc;
+}
+.group-wrapper.da-capo hr {
+  background: #008fcc;
+}
+.group-wrapper.grupo-de-consumo {
+  color: #849f16;
+}
+.group-wrapper.grupo-de-consumo hr {
+  background: #849f16;
+}
+.group-wrapper:hover {
+  transition: all .2s linear;
+  color: #1F1815;
+}
+.group-wrapper:hover hr {
+  margin: 0 2rem;
+}
+.group-wrapper hr {
+  height: 4px;
+  margin: 0 4rem;
+  border: none;
+  transition: all .2s ease-in;
+}
 .group-wrapper a {
+  color: currentColor;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 1rem;
+}
+.group-wrapper a:hover {
+  text-decoration: none;
+}
+.group-wrapper h2 {
+  margin: 1rem 0 0;
+  font-size: 1.1rem;
+  font-weight: normal;
+  text-align: center;
 }
 .group-wrapper img {
+  height: 5rem;
   width: 5rem;
 }
 
