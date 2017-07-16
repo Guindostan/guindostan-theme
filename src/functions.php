@@ -468,6 +468,7 @@ function create_post_type_activities() {
             'not_found_in_trash' => __('No Activities found in Trash', 'activities')
         ),
         'public' => true,
+        'show_in_rest' => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
         'has_archive' => true,
         'menu_position' => 5,
@@ -508,6 +509,7 @@ function create_post_type_groups() {
             'not_found_in_trash' => __('No Groups found in Trash', 'groups')
         ),
         'public' => true,
+        'show_in_rest' => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
         'has_archive' => true,
         'menu_position' => 5,
